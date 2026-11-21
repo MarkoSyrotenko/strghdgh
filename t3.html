@@ -10,17 +10,17 @@
         {
             let arr=[p1,p2,p3,p4];
             let half1,half2=str;
-            text="";
+            let text="";
             pos = half2.indexOf("%");
             while (pos!=-1)
             {
                 half1 = half2.substring(0, pos);
-                text.concat(half1);
-                text.concat(arr[parseInt(half2.charAt(pos))-1]);
+                text=text.concat(half1);
+                text=text.concat(arr[parseInt(half2.charAt(pos+1))-1]);
                 half2 = half2.slice(pos + 2);
                 pos = half2.indexOf("%");
             }
-            text.concat(half2);
+            text=text.concat(half2);
             alert(text);
         }
         print("Today is %1 %2.%3.%4", "Monday", 10, 8, 2020);
